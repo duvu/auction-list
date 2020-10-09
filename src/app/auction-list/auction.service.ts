@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {AuctionNotice} from "./auction-list.component";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class AuctionService {
 
   constructor(private http: HttpClient) { }
 
-  getAuctionList(pageSize: number): Observable<any> {
+  getAuctionList(pageSize: number): Observable<AuctionNotice> {
     // tslint:disable-next-line:max-line-length
     //const url = 'https://dgts.moj.gov.vn/portal/search/auction-notice?assetName=&numberPerPage=1000&p=1&provinceId=100001&selectedOrganizationId=';
     // const xHeaders = {

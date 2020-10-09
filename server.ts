@@ -33,7 +33,7 @@ export function app() {
     maxAge: '1y'
   }));
 
-  const url = 'https://dgts.moj.gov.vn/portal/search/auction-notice?numberPerPage=10&p=1&provinceId=100001&selectedOrganizationId=';
+  const url = 'https://dgts.moj.gov.vn/portal/search/auction-notice?numberPerPage=1000&p=1&provinceId=100001&selectedOrganizationId=';
   // All regular routes use the Universal engine
   server.use('/api', (req, res) => {
     // res.send(axios.default.get(url));

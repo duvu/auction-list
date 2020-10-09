@@ -1,1 +1,25 @@
-<p>auction-list works!</p>
+<table mat-table [dataSource]="dataSource" matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    </ng-container>
+    <ng-container matColumnDef="propertyName">
+        <th mat-header-cell *matHeaderCellDef> Property Name</th>
+        <td mat-cell *matCellDef="let row">{{row.propertyName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="publishTime1">
+        <th mat-header-cell *matHeaderCellDef> Publish Time1</th>
+        <td mat-cell *matCellDef="let row">{{row.publishTime1 | date: 'short'}}</td>
+    </ng-container>
+    <ng-container matColumnDef="subPropertyName">
+        <th mat-header-cell *matHeaderCellDef> Sub Property Name</th>
+        <td mat-cell *matCellDef="let row">{{row.subPropertyName}}</td>
+    </ng-container>
+    <ng-container matColumnDef="titleName">
+        <th mat-header-cell *matHeaderCellDef> Title Name</th>
+        <td mat-cell *matCellDef="let row">{{row.titleName}}</td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [length]="resultsLength" [pageSize]="30"></mat-paginator>
