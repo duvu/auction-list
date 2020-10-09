@@ -8,7 +8,7 @@ import {AuctionService} from './auction.service';
 })
 export class AuctionListComponent implements OnInit, AfterViewInit {
   dataSource: AuctionItem[];
-  displayedColumns: string[] = ['id', 'propertyName', 'publishTime1', 'subPropertyName'];
+  displayedColumns: string[] = ['publishTime1', 'propertyName', 'subPropertyName'];
   constructor(private auctionService: AuctionService) { }
   resultsLength = 0;
 

@@ -1,4 +1,21 @@
-td ~ td {
-  margin-left: 10px;
+.aution-list {
+  height: 100%;
+  width: 100%;
+}
 
+.mat-table {
+  width: 100%;
+}
+.mat-column-publishTime1 {
+  width: 110px;
+}
+
+.mat-column-propertyName {
+  width: 50%;
+}
+.mat-row {
+  height: auto;
+}
+.mat-cell {
+  padding: 8px 8px 8px 0;
 }
