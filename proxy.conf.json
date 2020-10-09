@@ -1,0 +1,12 @@
+{
+  "/api/": {
+    "target": "https://dgts.moj.gov.vn",
+    "secure": false,
+    "pathRewrite": {
+      "^/api/": "/portal/search/"
+    }
+
+  },
+  "changeOrigin": false,
+  "logLevel": "debug"
+}
