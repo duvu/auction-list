@@ -33,9 +33,10 @@ export function app() {
     maxAge: '1y'
   }));
 
-  const url = 'https://dgts.moj.gov.vn/portal/search/auction-notice?numberPerPage=1000&p=1&provinceId=100001&selectedOrganizationId=';
+  const url = 'https://dgts.moj.gov.vn/portal/search/auction-notice?assetName=oto&numberPerPage=1000&p=1&provinceId=100001&searchSimple=&selectedOrganizationId=\n';
+  // const url = 'https://dgts.moj.gov.vn/portal/search/auction-notice?numberPerPage=1000&p=1&provinceId=100001&selectedOrganizationId=';
   // All regular routes use the Universal engine
-  server.use('/api', (req, res) => {
+  server.use('/api/auction-notice', (req, res) => {
     // res.send(axios.default.get(url));
     axios.default.get(url).then(result => {
       console.log('Result', result.data);
@@ -44,10 +45,6 @@ export function app() {
       console.log('Error', error);
     });
   });
-  //
-  // proxy('https://dgts.moj.gov.vn/portal/search/auction-notice?numberPerPage=10&p=1&provinceId=100001&selectedOrganizationId=', {
-  //       https: true
-  //     }));
 
   server.get('*', (req, res) => {
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });

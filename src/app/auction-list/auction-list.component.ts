@@ -1,5 +1,6 @@
 import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {AuctionService} from './auction.service';
+import { AuctionItem, AuctionNotice } from '../@models/auction.model';
+import {AuctionService} from '../@services/auction.service';
 
 @Component({
   selector: 'app-auction-list',
@@ -25,21 +26,4 @@ export class AuctionListComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
   }
 
-}
-
-export interface AuctionNotice {
-  rowCount: number;
-  pageNumber: number;
-  pageList: number[];
-  pageCount: number;
-  numberPerPage: number;
-  items: AuctionItem[];
-}
-
-export interface AuctionItem {
-  id: number;
-  propertyName: string;
-  publishTime1: number;
-  subPropertyName: string;
-  titleName: string;
 }
